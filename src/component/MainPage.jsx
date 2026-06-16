@@ -13,7 +13,7 @@ const Mainpage = () => {
     password: "",
   });
   const [err, setErr] = useState(false);
-  const [display, setDisplay] = useState(["flex", "none"]);
+  const [display, setDisplay] = useState(['',"none"]);
   const [typeChange, setTypeChange] = useState(["password", true]);
 
   const handleForm = (e) => {
