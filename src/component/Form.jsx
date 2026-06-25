@@ -6,24 +6,19 @@ import "react-phone-number-input/style.css";
 
 const Form = (props) => {
   const [value, setValue] = useState();
-  const [slide, setSlide] = useState(false)
- useEffect(
-    ()=>{
-      if(props.display[0] == "flex"){
-      setSlide(true)
-    }else{
-      setSlide(false)
-      console.log(slide);
-      
+  const [slide, setSlide] = useState(false);
+  useEffect(() => {
+    if (props.display[0] == "flex") {
+      setSlide(true);
+    } else {
+      setSlide(false);
     }
-    }
-    ,[props.display[0]])
-    
-  
+  }, [props.display[0]]);
+
   return (
     <div
       style={!props.err ? { display: props.display[0] } : { display: "flex" }}
-      className={`flex flex-col items-start gap-3 w-full ${slide? "slideLeft" : null}`}
+      className={`flex flex-col items-start gap-3 w-full ${slide ? "slideLeft" : null}`}
     >
       <div className="flex items-center mb-4 gap-1">
         <h2 className="font-bold">Already have an Account?</h2>

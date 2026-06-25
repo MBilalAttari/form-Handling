@@ -3,7 +3,6 @@ import Form from "./Form";
 import Swal from "sweetalert2";
 import UserDataShow from "./UserDataShow";
 
-
 const Mainpage = () => {
   const [userData, setUserData] = useState({
     firstName: "",
@@ -13,7 +12,7 @@ const Mainpage = () => {
     password: "",
   });
   const [err, setErr] = useState(false);
-  const [display, setDisplay] = useState(['',"none"]);
+  const [display, setDisplay] = useState(["", "none"]);
   const [typeChange, setTypeChange] = useState(["password", true]);
 
   const handleForm = (e) => {
@@ -31,8 +30,6 @@ const Mainpage = () => {
     ) {
       setErr(true);
     } else if (userData.password.length < 5) {
-      console.log(userData.password.length);
-
       setErr(true);
     } else {
       setUserData(storageData);
@@ -74,8 +71,12 @@ const Mainpage = () => {
         handleTypeChange={handleTypeChange}
         err={err}
       />
-      
-      <UserDataShow userData={userData} returnBtn={returnBtn} display={display} />
+
+      <UserDataShow
+        userData={userData}
+        returnBtn={returnBtn}
+        display={display}
+      />
     </div>
   );
 };
